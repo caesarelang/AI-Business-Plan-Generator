@@ -13,7 +13,7 @@ A fullstack web application that generates AI-powered business plans.
 - **Styling**: Tailwind 
 - **Database**: MySQL (via Prisma ORM v5)
 - **AI**: Gemini 3.5 Flash
-- **Hosting**: Vercel (fullstack)
+- **Hosting**: Vercel + Railway 
 
 ---
 
