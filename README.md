@@ -9,12 +9,11 @@
 A fullstack web application that generates AI-powered business plans.
 
 **Stack:**
-- **Frontend**: Next.js 16 (App Router, JavaScript, no TypeScript, no src/ folder)
-- **Styling**: Tailwind CSS 4
-- **Database**: MySQL 5.7+ (via Prisma ORM v5)
-- **Authentication**: NextAuth.js v4 (Credentials Provider - JWT)
-- **AI**: Anthropic Claude Sonnet 4 API
-- **Hosting**: Vercel (frontend) + Railway (MySQL)
+- **Frontend**: Next.js (App Router, JavaScript, no TypeScript)
+- **Styling**: Tailwind 
+- **Database**: MySQL (via Prisma ORM v5)
+- **AI**: Gemini 3.5 Flash
+- **Hosting**: Vercel (fullstack)
 
 ---
 
@@ -42,17 +41,11 @@ A fullstack web application that generates AI-powered business plans.
 - ✅ Responsive design
 
 ### Database
-- ✅ Prisma schema with 5 models
+- ✅ Prisma schema
 - ✅ User management
 - ✅ Business plan storage
 - ✅ Migrations created
-- ✅ Ready for Mysql/Railway
 
-### Configuration
-- ✅ Path aliases (@/* configured)
-- ✅ Environment variables setup
-- ✅ Prisma v5 compatible
-- ✅ All dependencies installed
 
 ---
 
@@ -60,8 +53,8 @@ A fullstack web application that generates AI-powered business plans.
 
 ### Prerequisites
 - Node.js 18+
-- MySQL 5.7+ or Docker
-- npm/yarn
+- MySQL 5.7+
+- npm
 
 ### 1. Setup Environment
 
@@ -77,19 +70,13 @@ npm install
 DATABASE_URL="mysql://root:root@localhost:3306/ai-business-plan"
 ```
 
-**Docker**:
-```bash
-docker run --name mysql-ai -e MYSQL_ROOT_PASSWORD=root \
-  -e MYSQL_DATABASE=ai-business-plan -p 3306:3306 -d mysql:8
-```
-
 ### 3. Create `.env` File
 
 ```env
 DATABASE_URL="mysql://root:root@localhost:3306/ai-business-plan"
 NEXTAUTH_SECRET="$(openssl rand -base64 32)"
 NEXTAUTH_URL="http://localhost:3000"
-ANTHROPIC_API_KEY="sk-ant-your-key-here"
+GEMINI_API_KEY="your-key-here"
 ```
 
 ### 4. Initialize Database
@@ -135,7 +122,7 @@ curl -X POST http://localhost:3000/api/register \
 
 ---
 
-## 📦 Deployment (Vercel + Railway)
+## 📦 Deployment (Vercel)
 
 ### Step 1: GitHub Setup
 ```bash
