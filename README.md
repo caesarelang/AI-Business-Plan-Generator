@@ -122,41 +122,6 @@ curl -X POST http://localhost:3000/api/register \
 
 ---
 
-## 📦 Deployment (Vercel)
-
-### Step 1: GitHub Setup
-```bash
-git init
-git add .
-git commit -m "Initial: AI Business Plan Generator"
-git remote add origin <your-repo>
-git push -u origin main
-```
-
-### Step 2: Railway Database
-1. Visit https://railway.app
-2. Create new project
-3. Add MySQL plugin
-4. Copy connection string
-
-### Step 3: Vercel Deployment
-1. Go to https://vercel.com/new
-2. Import your GitHub repo
-3. Add environment variables:
-   ```
-   DATABASE_URL=<Railway_URL>
-   NEXTAUTH_SECRET=<generate-new>
-   NEXTAUTH_URL=https://<your-domain>.vercel.app
-   ANTHROPIC_API_KEY=<your-key>
-   ```
-4. Deploy!
-
-### Step 4: Run Migrations
-```bash
-npx prisma migrate deploy
-```
-
----
 
 ## 🔧 Technical Details
 
