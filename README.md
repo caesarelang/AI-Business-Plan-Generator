@@ -151,32 +151,6 @@ User (id, email, password, name, createdAt)
 
 ---
 
-## 🐛 Troubleshooting
-
-**Connection Failed**
-```bash
-mysql -u root -p localhost:3306 -e "SELECT 1;"
-```
-
-**Prisma Not Generating**
-```bash
-rm -rf node_modules/.prisma
-npx prisma generate
-```
-
-**Path Aliases Not Working**
-- Verify `tsconfig.json` has:
-  ```json
-  "paths": { "@/*": ["./*"] }
-  ```
-
-**Claude API Errors**
-- Check API key: `printenv ANTHROPIC_API_KEY`
-- Verify quota at https://console.anthropic.com
-- Check request format in `app/api/generate/route.js`
-
----
-
 ## 📋 File Checklist
 
 - [x] `app/layout.js` - Root layout with SessionWrapper
