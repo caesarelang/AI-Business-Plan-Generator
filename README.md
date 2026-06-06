@@ -130,11 +130,6 @@ curl -X POST http://localhost:3000/api/register \
 User → Register/Login → NextAuth → JWT Token → Protected Routes
 ```
 
-### Session Management
-- Strategy: JWT (no database required)
-- Duration: 30 days default
-- Provider: Credentials (email/password)
-
 ### Database Schema
 ```
 User (id, email, password, name, createdAt)
@@ -177,7 +172,6 @@ User (id, email, password, name, createdAt)
 - [Next.js App Router](https://nextjs.org/docs/app)
 - [NextAuth.js JWT](https://next-auth.js.org/providers/credentials)
 - [Prisma MySQL](https://www.prisma.io/docs/getting-started/setup-prisma/start-from-scratch/relational-databases)
-- [Anthropic Docs](https://docs.anthropic.com/en/api/getting-started)
 - [Railway Deployment](https://docs.railway.app/databases/mysql)
 
 ---
