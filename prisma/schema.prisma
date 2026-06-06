@@ -5,7 +5,6 @@ generator client {
 datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
-  
 }
 
 model User {
@@ -66,6 +65,21 @@ model BusinessPlan {
   capital       String
   skills        String
   result        String   @db.Text
+
+  // Score fields
+  scoreMarket       Int?
+  scoreSkill        Int?
+  scoreCapital      Int?
+  scoreOverall      Int?
+
+  // Structured data as JSON text
+  executiveSummary  String?  @db.Text   // JSON: { idea, tagline, potential, risk_level }
+  marketAnalysis    String?  @db.Text   // JSON: { target_segment, market_size, competitors[], differentiator }
+  strategyPlan      String?  @db.Text   // JSON: { positioning, marketing_channels[], pricing_strategy, usp }
+  financialPlan     String?  @db.Text   // JSON: { initial_cost, monthly_cost, monthly_revenue, break_even_months, roi_12months }
+  actionPlan        String?  @db.Text   // JSON: { day30[], day60[], day90[] }
+  riskAnalysis      String?  @db.Text   // JSON: { risks[{ title, level, mitigation }] }
+
   createdAt     DateTime @default(now())
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
